@@ -36,8 +36,8 @@ int top;
 int stack[LIMIT];
 
 int main(int argc, char **argv);
+void pop(stack_t **stack, unsigned int line_number);
 void push(void);
-void pop(void);
 void display(void);
 
 
