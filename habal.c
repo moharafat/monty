@@ -29,7 +29,8 @@ int main(int argc, char **argv)
 	{
 		while (fgets(buffer, sizeof(buffer), file) != NULL)
 		{
-			printf("%s" ,buffer);
+			if 
+			printf("%s", buffer);
 			if (buffer == sps[i].opcode)
 			{
 				sps[i].f;
