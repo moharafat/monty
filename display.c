@@ -1,5 +1,5 @@
 #include "main.h"
-void display(void)
+void display(stack_t **stack, unsigned int line_number)
 {
 	int i;
 
@@ -12,7 +12,6 @@ void display(void)
 		printf("The elements of the stack are:\n");
 		for (i = top; i >= 0; i--)
 		{
-			printf("%d\n", stack[i]);
 		}
 	}
 }

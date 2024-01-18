@@ -35,10 +35,9 @@ typedef struct instruction_s
 int top;
 int stack[LIMIT];
 
-int main(int argc, char **argv);
 void pop(stack_t **stack, unsigned int line_number);
-void push(void);
-void display(void);
+void push(stack_t **stack, unsigned int line_number);
+void display(stack_t **stack, unsigned int line_number);
 
 
 #endif

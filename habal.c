@@ -11,27 +11,15 @@ int main(int argc, char **argv)
 	FILE *file;
 	int i, count = 0;
 	instruction_t sps[] = {
-		{'push', push}, {'pop', pop}, {'display', display}, {'exit', exit}
+		{"push", push}, {"pop", pop}, {"display", display}
 };
 
-	for (i = 0; i != NULL; i++)
-	{
-		if (s == sps[i].instruction_t)
-		{
-			count = count + sps[i].f(argv);
-			break;
-		}
-		else if (i == 6 && i != sps[i].instruction_t)
-		{
-			/* code */
-		}
-	}
 	if (argc != 2)
 	{
-		fprintf(2, "USAGE: monty fil\n");
+		fprintf(stderr, "USAGE: monty fil\n");
 		exit(EXIT_FAILURE);
 	}
-	file = fopen(argv[1], 'r');
+	file = fopen(argv[1], "r");
 	if (file == NULL)
 	{
 		printf("Error: Can't open file <file>");
@@ -41,15 +29,14 @@ int main(int argc, char **argv)
 	{
 		while (fgets(buffer, sizeof(buffer), file) != NULL)
 		{
-		printf("%s", buffer);
+			printf("%s" ,buffer);
+			if (buffer == sps[i].opcode)
+			{
+				sps[i].f;
+				break;
+			}
 		}
 		fclose(file);
 	}
-	else
-	{
-		printf("USAGE: monty file");
-		exit(EXIT_FAILURE);
-	}
 	return (0);
 }
-

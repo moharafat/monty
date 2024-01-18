@@ -1,17 +1,4 @@
 #include "main.h"
-void push(void)
+void push(stack_t **stack, unsigned int line_number)
 {
-	int element;
-
-	if (top == LIMIT - 1)
-	{
-		printf("Stack underflow\n");
-	}
-	else
-	{
-		printf("Enter the element to be inserted:");
-		scanf("%d", &element);
-		top++;
-		stack[top] = element;
-	}
 }
