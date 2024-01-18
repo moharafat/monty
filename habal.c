@@ -1,4 +1,4 @@
-#include "monty.h"
+#include "main.h"
 /**
  * main - entry point
  * @argc: arguments num.
@@ -29,7 +29,6 @@ int main(int argc, char **argv)
 	{
 		while (fgets(buffer, sizeof(buffer), file) != NULL)
 		{
-			if 
 			printf("%s", buffer);
 			if (buffer == sps[i].opcode)
 			{

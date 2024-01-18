@@ -1,5 +1,5 @@
-#ifndef MAIN_h
-#define MAIN_h
+#ifndef MONTY_h
+#define MONTY_h
 #include <stdio.h>
 #include<stdlib.h>
 #define LIMIT 100
@@ -33,7 +33,6 @@ typedef struct instruction_s
 } instruction_t;
 
 int top;
-int stack[LIMIT];
 
 void pop(stack_t **stack, unsigned int line_number);
 void push(stack_t **stack, unsigned int line_number);
