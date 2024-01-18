@@ -34,6 +34,7 @@ typedef struct instruction_s
 
 int top;
 int stack[LIMIT];
+
 int main(int argc, char **argv);
 void push(void);
 void pop(void);

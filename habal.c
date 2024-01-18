@@ -7,12 +7,13 @@
  */
 int main(int argc, char **argv)
 {
+	char buffer[50];
 	FILE *file;
 	int i, count = 0;
-	char buffer[50];
 	instruction_t sps[] = {
 		{'push', push}, {'pop', pop}, {'display', display}, {'exit', exit}
-	}
+};
+
 	for (i = 0; i != NULL; i++)
 	{
 		if (s == sps[i].instruction_t)
@@ -20,7 +21,7 @@ int main(int argc, char **argv)
 			count = count + sps[i].f(argv);
 			break;
 		}
-		else if (i == 6 && != sps[i].instruction_t)
+		else if (i == 6 && i != sps[i].instruction_t)
 		{
 			/* code */
 		}
