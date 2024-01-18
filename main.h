@@ -1,8 +1,8 @@
 #ifndef MAIN_h
 #define MAIN_h
-
 #include <stdio.h>
 #include<stdlib.h>
+#define LIMIT 100
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -32,7 +32,8 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-
+int top;
+int stack[LIMIT];
 int main(int argc, char **argv);
 void push(void);
 void pop(void);

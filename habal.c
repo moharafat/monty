@@ -13,21 +13,21 @@ int main(int argc, char **argv)
 	instruction_t sps[] = {
 		{'push', push}, {'pop', pop}, {'display', display}, {'exit', exit}
 	}
-	for (i = 0; i <= 4; i++)
+	for (i = 0; i != NULL; i++)
 	{
-		if (s == sps[i].spec)
+		if (s == sps[i].instruction_t)
 		{
 			count = count + sps[i].f(argv);
 			break;
 		}
-		else if (i == 6 && != sps[i].spec)
+		else if (i == 6 && != sps[i].instruction_t)
 		{
 			/* code */
 		}
 	}
 	if (argc != 2)
 	{
-		dprintf(2, "USAGE: monty fil\n");
+		fprintf(2, "USAGE: monty fil\n");
 		exit(EXIT_FAILURE);
 	}
 	file = fopen(argv[1], 'r');
