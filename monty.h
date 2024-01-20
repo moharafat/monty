@@ -38,7 +38,7 @@ typedef struct instruction_s
 int top;
 
 void pop(stack_t **stack, unsigned int line_number);
-void push(stack_t **stack, unsigned int line_number, char **av);
+void push(stack_t **stack, unsigned int line_number);
 void display(stack_t **stack, unsigned int line_number);
 char **get_command(char *buffer, char **av);
 

@@ -1,6 +1,10 @@
 #include "monty.h"
-
-void push(stack_t **stack, unsigned int line_number, char **av)
+/**
+ * push - adds top element
+ * @stack: stack
+ * @line_number: line number
+*/
+void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
 
@@ -9,7 +13,6 @@ void push(stack_t **stack, unsigned int line_number, char **av)
 		fprintf(stderr, "Error: Stack overflow\n");
 		exit(EXIT_FAILURE);
 	}
-
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 	{
@@ -17,7 +20,7 @@ void push(stack_t **stack, unsigned int line_number, char **av)
 		exit(EXIT_FAILURE);
 	}
 
-	new_node->n = atoi(av[1]);
+	new_node->n = line_number;
 	new_node->next = *stack;
 	new_node->prev = NULL;
 

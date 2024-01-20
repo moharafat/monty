@@ -37,7 +37,7 @@ int main(int argc, char **argv)
 			{
 				if (strcmp(buffer, sps[i].opcode) == 0)
 				{
-					sps[i].f(NULL, 0);
+					sps[i].f;
 					printf("here it is\n");
 					break;
 				}
