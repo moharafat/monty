@@ -9,6 +9,7 @@ int main(int argc, char **argv)
 {
 	char buffer[50];
 	FILE *file;
+	stack_t *head;
 	char *delim = " \n", *token;
 	int i, count = 0;
 	instruction_t sps[] = {
@@ -37,7 +38,7 @@ int main(int argc, char **argv)
 			{
 				if (strcmp(buffer, sps[i].opcode) == 0)
 				{
-					sps[i].f;
+					sps[i].f(&head, 0);
 					printf("here it is\n");
 					break;
 				}
