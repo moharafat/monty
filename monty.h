@@ -1,7 +1,10 @@
 #ifndef MONTY_h
 #define MONTY_h
 #include <stdio.h>
-#include<stdlib.h>
+#include <stdlib.h>
+#include <stddef.h>
+#include <unistd.h>
+#include <string.h>
 #define LIMIT 100
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -35,8 +38,9 @@ typedef struct instruction_s
 int top;
 
 void pop(stack_t **stack, unsigned int line_number);
-void push(stack_t **stack, unsigned int line_number);
+void push(stack_t **stack, unsigned int line_number, char **av);
 void display(stack_t **stack, unsigned int line_number);
+char **get_command(char *buffer, char **av);
 
 
 #endif

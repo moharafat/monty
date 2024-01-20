@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
  * main - entry point
  * @argc: arguments num.
@@ -9,6 +9,7 @@ int main(int argc, char **argv)
 {
 	char buffer[50];
 	FILE *file;
+	char *delim = " \n", *token;
 	int i, count = 0;
 	instruction_t sps[] = {
 		{"push", push}, {"pop", pop}, {"display", display}
@@ -29,11 +30,17 @@ int main(int argc, char **argv)
 	{
 		while (fgets(buffer, sizeof(buffer), file) != NULL)
 		{
-			printf("%s", buffer);
-			if (buffer == sps[i].opcode)
+			get_command(buffer, argv);
+			printf("buffer is %s\n", buffer);
+
+			for (i = 0; i < sizeof(sps) / sizeof(sps[0]); i++)
 			{
-				sps[i].f;
-				break;
+				if (strcmp(buffer, sps[i].opcode) == 0)
+				{
+					sps[i].f(NULL, 0);
+					printf("here it is\n");
+					break;
+				}
 			}
 		}
 		fclose(file);
