@@ -8,7 +8,7 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
 
-	printf("samo3aleko\n");
+	printf("TOKEN NOW = %s\n", token);
 	if (top == LIMIT - 1)
 	{
 		fprintf(stderr, "Error: Stack overflow\n");
@@ -22,7 +22,7 @@ void push(stack_t **stack, unsigned int line_number)
 	}
 	top++;
 	printf("can u see me?\n");
-	new_node->n = line_number;
+	new_node->n = 0;
 	new_node->next = *stack;
 	new_node->prev = NULL;
 	printf("%d\n", new_node->n);

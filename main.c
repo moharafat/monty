@@ -10,10 +10,10 @@ int main(int argc, char **argv)
 	char buffer[50];
 	FILE *file;
 	stack_t *head;
-	char *delim = " \n", *token, *yaret;
+	char *delim = " \n";
 	int i, k = 0, count = 0;
 	instruction_t sps[] = {
-		{"push", push}, {"pop", pop}, {"display", display}};
+		{"push", push}, {"pop", pop}, {"display", display}, {"pint", pop}};
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty fil\n");
@@ -30,16 +30,22 @@ int main(int argc, char **argv)
 		while (fgets(buffer, sizeof(buffer), file) != NULL)
 		{
 			token = strtok(buffer, delim);
-			while (token != NULL)
-			{
-				printf("buffer is%s\n", buffer);
-				token = strtok(NULL, delim);
-			}
+				printf("1st token is %s\n", token);
 			for (i = 0; i < sizeof(sps) / sizeof(sps[0]); i++)
 			{
 				if (strcmp(buffer, sps[i].opcode) == 0)
 				{
-					sps[i].f(&head, 0);
+					if (i == 0)
+					{
+						token = strtok(NULL, delim);
+						sps[i].f(&head, 0);
+						printf("2nd token is %s\n", token);
+					}
+					else
+					{
+						sps[i].f(&head, 0);
+						printf("TOKEN IS NOT NUMBERS 100 %s", token);
+					}
 					break;
 				}
 			}
