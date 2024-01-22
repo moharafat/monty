@@ -13,7 +13,7 @@ int main(int argc, char **argv)
 	char *delim = " \n";
 	int i, k = 0, count = 0;
 	instruction_t sps[] = {
-		{"push", push}, {"pop", pop}, {"display", display}, {"pint", pop}};
+		{"push", push}, {"pop", pop}, {"pall", pall}, {"pint", pop}};
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty fil\n");
@@ -44,7 +44,7 @@ int main(int argc, char **argv)
 					else
 					{
 						sps[i].f(&head, 0);
-						printf("TOKEN IS NOT NUMBERS 100 %s", token);
+						printf("TOKEN IS NOT NUMBERS 100%% %s", token);
 					}
 					break;
 				}
